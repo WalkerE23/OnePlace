@@ -14,6 +14,8 @@
 		FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1261451AD3016100135C60 /* LaunchScreen.xib */; };
 		FF1261531AD3016100135C60 /* File_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1261521AD3016100135C60 /* File_ManagerTests.swift */; };
 		FF12615D1AD30C0600135C60 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12615C1AD30C0600135C60 /* Item.swift */; };
+		FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */; };
+		FF9928DA1AD6FEF400352288 /* CreateNewFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		FF1261511AD3016100135C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1261521AD3016100135C60 /* File_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File_ManagerTests.swift; sourceTree = "<group>"; };
 		FF12615C1AD30C0600135C60 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewFolderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,14 @@
 		FF1261391AD3016000135C60 /* File_Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FF12615C1AD30C0600135C60 /* Item.swift */,
 				FF12613C1AD3016100135C60 /* AppDelegate.swift */,
 				FF12613E1AD3016100135C60 /* ViewController.swift */,
+				FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */,
+				FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */,
 				FF1261401AD3016100135C60 /* Main.storyboard */,
 				FF1261431AD3016100135C60 /* Images.xcassets */,
 				FF1261451AD3016100135C60 /* LaunchScreen.xib */,
-				FF12615C1AD30C0600135C60 /* Item.swift */,
 				FF12613A1AD3016100135C60 /* Supporting Files */,
 			);
 			path = File_Manager;
@@ -218,6 +224,8 @@
 				FF12613F1AD3016100135C60 /* ViewController.swift in Sources */,
 				FF12615D1AD30C0600135C60 /* Item.swift in Sources */,
 				FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */,
+				FF9928DA1AD6FEF400352288 /* CreateNewFolderViewController.swift in Sources */,
+				FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				FF1261581AD3016100135C60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF1261591AD3016100135C60 /* Build configuration list for PBXNativeTarget "File_ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				FF12615B1AD3016100135C60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

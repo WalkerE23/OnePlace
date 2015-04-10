@@ -1,13 +1,7 @@
-//
-//  Item.swift
-//  File_Manager
-//
-//  Created by Elliott Walker on 4/6/15.
-//  Copyright (c) 2015 Elliott Walker. All rights reserved.
-//
+// Playground - noun: a place where people can play
 
-import Foundation
-import UIKit
+import Cocoa
+
 
 var fileMgr:FileManager = FileManager()
 
@@ -38,27 +32,21 @@ class File:NSObject{
 }
 
 
-class Directory:NSObject{
+class Folder:NSObject{
     var name:String = ""
-    var internalFoldersArray:[Directory] = [Directory]()
+    var internalFoldersArray:[Folder] = [Folder]()
     var filesArray:[File] = [File]()
     init(name:String){
         self.name = name
     }
-
+    
 }
 
 
 class FileManager: NSObject{
-    //root, driver, manager, etc
-    var directoryArray = [Directory]()
-    var fileArray = [File]()
+    var itemArray = [Item]()
     
-    func addDirectory(name:String){
-        directoryArray.append(Directory(name: name))
-    }
-    
-    func addFile(name:String, desc:String, text:String){
-        fileArray.append(File(name:name, desc:desc, text:text))
+    func addItem(name:String, desc:String, text:String){
+        itemArray.append(Item(name:name, desc:desc, text:text))
     }
 }
