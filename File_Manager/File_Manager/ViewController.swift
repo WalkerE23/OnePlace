@@ -20,15 +20,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileMgr.directoryArray.count
+        return fileMgr.itemArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
         
         
-        cell.textLabel?.text = fileMgr.directoryArray[indexPath.row].name
-        cell.detailTextLabel?.text = fileMgr.directoryArray[indexPath.row].desc
+        cell.textLabel?.text = fileMgr.itemArray[indexPath.row].name
+        cell.detailTextLabel?.text = fileMgr.itemArray[indexPath.row].desc
         return cell
     }
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         index_path_holder = indexPath.row
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.performSegueWithIdentifier("cellToDetail", sender: self)
-        println(fileMgr.itemArray[indexPath.row].text)
+        //println(fileMgr.itemArray[indexPath.row].text)
     }
     
     

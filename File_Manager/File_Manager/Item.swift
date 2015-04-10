@@ -40,8 +40,12 @@ class File:NSObject{
 
 class Directory:NSObject{
     var name:String = ""
+    var desc:String = ""
+    
     var internalFoldersArray:[Directory] = [Directory]()
+    
     var filesArray:[File] = [File]()
+    
     init(name:String){
         self.name = name
     }
@@ -53,12 +57,15 @@ class FileManager: NSObject{
     //root, driver, manager, etc
     var directoryArray = [Directory]()
     var fileArray = [File]()
+    var itemArray = [Item]()
     
     func addDirectory(name:String){
         directoryArray.append(Directory(name: name))
     }
     
-    func addFile(name:String, desc:String, text:String){
-        fileArray.append(File(name:name, desc:desc, text:text))
+    func addItem(name:String, desc:String, text:String){
+        itemArray.append(Item(name:name, desc:desc, text:text))
     }
+    
+
 }
