@@ -7,17 +7,17 @@ class DetailViewController: UIViewController{
     
     
     @IBOutlet weak var testLabel: UILabel!
-    var dataText:String?
+    @IBOutlet weak var fileTextLabel: UILabel!
+    var filePath:String!
     
-    
-//    override func viewWillAppear(animated: Bool) {
-//        testLabel.text = newText
-//    }
+    var fileName:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = dataText
-
+        var fp = filePath
+        
+        fileTextLabel.text = fp
+        testLabel.text = fp.pathExtension
     }
 
 }

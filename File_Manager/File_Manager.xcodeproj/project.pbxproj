@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12613C1AD3016100135C60 /* AppDelegate.swift */; };
-		FF12613F1AD3016100135C60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12613E1AD3016100135C60 /* ViewController.swift */; };
+		FF12613F1AD3016100135C60 /* FileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12613E1AD3016100135C60 /* FileTableViewController.swift */; };
 		FF1261421AD3016100135C60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1261401AD3016100135C60 /* Main.storyboard */; };
 		FF1261441AD3016100135C60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1261431AD3016100135C60 /* Images.xcassets */; };
 		FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1261451AD3016100135C60 /* LaunchScreen.xib */; };
 		FF1261531AD3016100135C60 /* File_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1261521AD3016100135C60 /* File_ManagerTests.swift */; };
-		FF12615D1AD30C0600135C60 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12615C1AD30C0600135C60 /* Item.swift */; };
-		FF1EEA371AD84BA70078E83A /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF1EEA361AD84BA70078E83A /* example.txt */; };
+		FF12615D1AD30C0600135C60 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12615C1AD30C0600135C60 /* Manager.swift */; };
+		FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */; };
+		FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */; };
 		FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */; };
-		FF9928DA1AD6FEF400352288 /* CreateNewFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */; };
+		FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9928D91AD6FEF400352288 /* FileCreateVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +34,18 @@
 		FF1261371AD3016000135C60 /* File_Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = File_Manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF12613B1AD3016100135C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF12613C1AD3016100135C60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF12613E1AD3016100135C60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF12613E1AD3016100135C60 /* FileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileTableViewController.swift; path = File_Manager/FileTableViewController.swift; sourceTree = "<group>"; };
 		FF1261411AD3016100135C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1261431AD3016100135C60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF1261461AD3016100135C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		FF12614C1AD3016100135C60 /* File_ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = File_ManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1261511AD3016100135C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1261521AD3016100135C60 /* File_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File_ManagerTests.swift; sourceTree = "<group>"; };
-		FF12615C1AD30C0600135C60 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		FF1EEA361AD84BA70078E83A /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		FF12615C1AD30C0600135C60 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
+		FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCreateVC.swift; sourceTree = "<group>"; };
 		FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewFolderViewController.swift; sourceTree = "<group>"; };
+		FF9928D91AD6FEF400352288 /* FileCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileCreateVC.swift; path = File_Manager/FileCreateVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,8 @@
 				FF1261391AD3016000135C60 /* File_Manager */,
 				FF12614F1AD3016100135C60 /* File_ManagerTests */,
 				FF1261381AD3016000135C60 /* Products */,
+				FF9928D91AD6FEF400352288 /* FileCreateVC.swift */,
+				FF12613E1AD3016100135C60 /* FileTableViewController.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,16 +89,15 @@
 		FF1261391AD3016000135C60 /* File_Manager */ = {
 			isa = PBXGroup;
 			children = (
-				FF12615C1AD30C0600135C60 /* Item.swift */,
-				FF12613C1AD3016100135C60 /* AppDelegate.swift */,
-				FF12613E1AD3016100135C60 /* ViewController.swift */,
-				FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */,
-				FF9928D91AD6FEF400352288 /* CreateNewFolderViewController.swift */,
 				FF1261401AD3016100135C60 /* Main.storyboard */,
+				FF12615C1AD30C0600135C60 /* Manager.swift */,
+				FF12613C1AD3016100135C60 /* AppDelegate.swift */,
+				FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */,
+				FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */,
+				FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */,
 				FF1261431AD3016100135C60 /* Images.xcassets */,
 				FF1261451AD3016100135C60 /* LaunchScreen.xib */,
 				FF12613A1AD3016100135C60 /* Supporting Files */,
-				FF1EEA361AD84BA70078E83A /* example.txt */,
 			);
 			path = File_Manager;
 			sourceTree = "<group>";
@@ -205,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1261421AD3016100135C60 /* Main.storyboard in Resources */,
-				FF1EEA371AD84BA70078E83A /* example.txt in Resources */,
 				FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */,
 				FF1261441AD3016100135C60 /* Images.xcassets in Resources */,
 			);
@@ -225,10 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF12613F1AD3016100135C60 /* ViewController.swift in Sources */,
-				FF12615D1AD30C0600135C60 /* Item.swift in Sources */,
+				FF12613F1AD3016100135C60 /* FileTableViewController.swift in Sources */,
+				FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */,
+				FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */,
+				FF12615D1AD30C0600135C60 /* Manager.swift in Sources */,
 				FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */,
-				FF9928DA1AD6FEF400352288 /* CreateNewFolderViewController.swift in Sources */,
+				FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */,
 				FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
