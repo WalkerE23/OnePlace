@@ -1,17 +1,24 @@
 //
 //  AppDelegate.swift
-// 
+//
 
 import UIKit
+
+
+var fileMgr:FileManager = FileManager()
+var dropboxMgr:DropboxManager = DropboxManager()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    //Dropbox app is called "One Place"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+//        let accountManager = DBAccountManager(appKey: "APP_KEY", secret: "APP_SECRET")
+//        DBAccountManager.setSharedManager(accountManager)
+        dropboxMgr.setup()
         return true
     }
 
@@ -35,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return dropboxMgr.finalizeAuthentication(url)
     }
 
 

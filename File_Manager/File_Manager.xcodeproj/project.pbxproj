@@ -13,11 +13,20 @@
 		FF1261441AD3016100135C60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1261431AD3016100135C60 /* Images.xcassets */; };
 		FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1261451AD3016100135C60 /* LaunchScreen.xib */; };
 		FF1261531AD3016100135C60 /* File_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1261521AD3016100135C60 /* File_ManagerTests.swift */; };
-		FF12615D1AD30C0600135C60 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12615C1AD30C0600135C60 /* Manager.swift */; };
+		FF12615D1AD30C0600135C60 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12615C1AD30C0600135C60 /* FileManager.swift */; };
+		FF2D27131AE888D900B358A1 /* ImgViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2D27121AE888D900B358A1 /* ImgViewVC.swift */; };
 		FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */; };
 		FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */; };
-		FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */; };
+		FF89A6021AF1B1F300E6C28A /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */; };
 		FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9928D91AD6FEF400352288 /* FileCreateVC.swift */; };
+		FFF07FEE1AF4588A00AFC979 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FED1AF4588A00AFC979 /* Dropbox.framework */; };
+		FFF07FF01AF459E000AFC979 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */; };
+		FFF07FF21AF459ED00AFC979 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF11AF459ED00AFC979 /* Security.framework */; };
+		FFF07FF41AF459F600AFC979 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF31AF459F600AFC979 /* SystemConfiguration.framework */; };
+		FFF07FF61AF45A0000AFC979 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF51AF45A0000AFC979 /* QuartzCore.framework */; };
+		FFF07FF81AF45A2900AFC979 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF71AF45A2900AFC979 /* libc++.dylib */; };
+		FFF07FFA1AF45A3A00AFC979 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF91AF45A3A00AFC979 /* libz.dylib */; };
+		FFF07FFF1AF46FDC00AFC979 /* DropboxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF07FFE1AF46FDC00AFC979 /* DropboxManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +50,21 @@
 		FF12614C1AD3016100135C60 /* File_ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = File_ManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1261511AD3016100135C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1261521AD3016100135C60 /* File_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File_ManagerTests.swift; sourceTree = "<group>"; };
-		FF12615C1AD30C0600135C60 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		FF12615C1AD30C0600135C60 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		FF2D27121AE888D900B358A1 /* ImgViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgViewVC.swift; sourceTree = "<group>"; };
 		FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
 		FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCreateVC.swift; sourceTree = "<group>"; };
-		FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		FF9928D91AD6FEF400352288 /* FileCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileCreateVC.swift; path = File_Manager/FileCreateVC.swift; sourceTree = "<group>"; };
+		FFF07FED1AF4588A00AFC979 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dropbox.framework; path = File_Manager/Dropbox.framework; sourceTree = "<group>"; };
+		FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFF07FF11AF459ED00AFC979 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FFF07FF31AF459F600AFC979 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFF07FF51AF45A0000AFC979 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FFF07FF71AF45A2900AFC979 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		FFF07FF91AF45A3A00AFC979 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FFF07FFB1AF45D0100AFC979 /* File_Manager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "File_Manager-Bridging-Header.h"; sourceTree = "<group>"; };
+		FFF07FFE1AF46FDC00AFC979 /* DropboxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +72,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF07FEE1AF4588A00AFC979 /* Dropbox.framework in Frameworks */,
+				FFF07FFA1AF45A3A00AFC979 /* libz.dylib in Frameworks */,
+				FFF07FF81AF45A2900AFC979 /* libc++.dylib in Frameworks */,
+				FFF07FF61AF45A0000AFC979 /* QuartzCore.framework in Frameworks */,
+				FFF07FF41AF459F600AFC979 /* SystemConfiguration.framework in Frameworks */,
+				FFF07FF21AF459ED00AFC979 /* Security.framework in Frameworks */,
+				FFF07FF01AF459E000AFC979 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,11 +95,19 @@
 		FF12612E1AD3016000135C60 = {
 			isa = PBXGroup;
 			children = (
+				FFF07FF91AF45A3A00AFC979 /* libz.dylib */,
+				FFF07FF71AF45A2900AFC979 /* libc++.dylib */,
+				FFF07FED1AF4588A00AFC979 /* Dropbox.framework */,
+				FFF07FF51AF45A0000AFC979 /* QuartzCore.framework */,
+				FFF07FF31AF459F600AFC979 /* SystemConfiguration.framework */,
+				FFF07FF11AF459ED00AFC979 /* Security.framework */,
+				FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */,
 				FF1261391AD3016000135C60 /* File_Manager */,
 				FF12614F1AD3016100135C60 /* File_ManagerTests */,
 				FF1261381AD3016000135C60 /* Products */,
 				FF9928D91AD6FEF400352288 /* FileCreateVC.swift */,
 				FF12613E1AD3016100135C60 /* FileTableViewController.swift */,
+				FFF07FFB1AF45D0100AFC979 /* File_Manager-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,11 +124,13 @@
 			isa = PBXGroup;
 			children = (
 				FF1261401AD3016100135C60 /* Main.storyboard */,
-				FF12615C1AD30C0600135C60 /* Manager.swift */,
+				FF12615C1AD30C0600135C60 /* FileManager.swift */,
+				FFF07FFE1AF46FDC00AFC979 /* DropboxManager.swift */,
 				FF12613C1AD3016100135C60 /* AppDelegate.swift */,
 				FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */,
 				FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */,
-				FF81CA861AD48B7D00C1A376 /* DetailViewController.swift */,
+				FF2D27121AE888D900B358A1 /* ImgViewVC.swift */,
+				FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */,
 				FF1261431AD3016100135C60 /* Images.xcassets */,
 				FF1261451AD3016100135C60 /* LaunchScreen.xib */,
 				FF12613A1AD3016100135C60 /* Supporting Files */,
@@ -230,10 +266,12 @@
 				FF12613F1AD3016100135C60 /* FileTableViewController.swift in Sources */,
 				FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */,
 				FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */,
-				FF12615D1AD30C0600135C60 /* Manager.swift in Sources */,
+				FF12615D1AD30C0600135C60 /* FileManager.swift in Sources */,
+				FFF07FFF1AF46FDC00AFC979 /* DropboxManager.swift in Sources */,
+				FF2D27131AE888D900B358A1 /* ImgViewVC.swift in Sources */,
+				FF89A6021AF1B1F300E6C28A /* WebViewVC.swift in Sources */,
 				FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */,
 				FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */,
-				FF81CA871AD48B7D00C1A376 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +394,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/File_Manager",
+				);
 				INFOPLIST_FILE = File_Manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "File_Manager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -366,9 +411,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/File_Manager",
+				);
 				INFOPLIST_FILE = File_Manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "File_Manager-Bridging-Header.h";
 			};
 			name = Release;
 		};

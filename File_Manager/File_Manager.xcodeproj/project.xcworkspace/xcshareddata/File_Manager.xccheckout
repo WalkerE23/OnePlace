@@ -10,8 +10,6 @@
 	<string>File_Manager</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</key>
-		<string>https://github.com/MengTo/Spring.git</string>
 		<key>8072520CBF46ED2DE1107F31CFC2F00DBDCF2047</key>
 		<string>https://github.com/WalkerE23/iOS-Team-Project.git</string>
 	</dict>
@@ -19,8 +17,6 @@
 	<string>File_Manager/File_Manager.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</key>
-		<string>../../../File_Manager/File_Manager/Spring/</string>
 		<key>8072520CBF46ED2DE1107F31CFC2F00DBDCF2047</key>
 		<string>../../..</string>
 	</dict>
@@ -39,14 +35,6 @@
 			<string>8072520CBF46ED2DE1107F31CFC2F00DBDCF2047</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOS-Team-Project</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Spring</string>
 		</dict>
 	</array>
 </dict>

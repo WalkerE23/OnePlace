@@ -5,89 +5,155 @@
 import UIKit
 class FolderTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    
-    //name and call the segue to itself. 
-    //call that programatically when the cell is pressed
-    //make a method called update() where all of the view did load code was
-    //call self.update() in view did load. 
-    //also call that in the segue which needs to "load the new page"
-    //put parameters in update with the current directory
-    //make way of tracking current directory in the fileMgr
-    //make way to update current directory when cell is hit
-    //restrict back button from going too far back...
-    
-    //make updating the window by requiring tableview funcs call to fileMgr.
-    //think about type: file or folder
-    //incorporate this type into the time of creation of each
-    //tracking if the cell hit, what loads
-    
-    //determine if there is a way to check file type and how easy is that
-    //if so, new approach:
-    //change directories folders to paths. everything has its path taken care of, regardless of type, bc will check that later.
-    //instantiate file specifics in the detail view. 
-    //get that connection working totally.
-    //figure out how you wanna do moving folders and files.
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
-    var index_path_holder:Int!
     var temp_new_path_holder:String!
-
+    var indexPathArray = [NSIndexPath]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+    //Method for extracting name of folder/file from path
     func stripPath(s: String)->String{
         var tempStringArray = s.componentsSeparatedByString("/")
         return tempStringArray[tempStringArray.count - 1]
     }
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    //Get Number of cells to create
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileMgr.directoriesStringArray.count
+        return fileMgr.pathStringArray.count
     }
     
     //create cells and put them in the table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "folderCell")
-        cell.textLabel?.text = stripPath(fileMgr.directoriesStringArray[indexPath.row])
+        cell.textLabel?.text = stripPath(fileMgr.pathStringArray[indexPath.row])
+        indexPathArray.append(indexPath)
+        
+        if(fileMgr.editingMode){cell.backgroundColor = UIColor.greenColor()}
+        else{cell.backgroundColor = UIColor.whiteColor()}
+        
         return cell
     }
     
     //Selection of a cell
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        index_path_holder = indexPath.row
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        temp_new_path_holder = fileMgr.directoriesStringArray[indexPath.row]
-        
-        
-        
-        var isDir : ObjCBool = false
-        var huh = fileMgr.nsFM.fileExistsAtPath(temp_new_path_holder, isDirectory:&isDir)
-        if (huh) {
-            if isDir {
-                self.performSegueWithIdentifier("selfSegue", sender: self)
-            } else {
-                self.performSegueWithIdentifier("toDetail", sender: self)
-            }
-        } else {
-            println("file does not exist")
-        }
-    }
-    
-    //delete folder/cell
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle , forRowAtIndexPath indexPath: NSIndexPath) {
-        if(editingStyle == UITableViewCellEditingStyle.Delete){
-            var deleteError:NSError?
-            var tempFileString = fileMgr.directoriesStringArray[indexPath.row]
 
-            fileMgr.directoriesStringArray.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            fileMgr.nsFM.removeItemAtPath(tempFileString, error: &deleteError)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        temp_new_path_holder = fileMgr.pathStringArray[indexPath.row]
+        
+        var isDir = fileMgr.checkFolderOrFile(temp_new_path_holder)
+        if(isDir){
+            self.performSegueWithIdentifier("selfSegue", sender: self)
+            //fileMgr.editingMode = false
         }
+        else{
+            if(temp_new_path_holder.pathExtension == "jpg"){
+                self.performSegueWithIdentifier("segueToImgView", sender: self)
+            }
+            else if(temp_new_path_holder.pathExtension == "pdf" || temp_new_path_holder.pathExtension == "txt"){
+                self.performSegueWithIdentifier("segueToWebView", sender: self)
+            }
+            else{
+                println("huh????")
+            }
+        }
+
+    }
+    //Cell Editing: Piece #1
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        if(fileMgr.editingMode){
+            
+            var dropAction = UITableViewRowAction(style: .Normal, title: "Drop") { (action, indexPath) -> Void in
+                tableView.editing = false //slide menu goes away
+                var t_path = fileMgr.pathStringArray[indexPath.row]
+                var isDir = fileMgr.checkFolderOrFile(t_path)
+                if(isDir){
+                    fileMgr.moveOver(fileMgr.editingPathToChange,toPath:t_path)
+                    for(var i = 0; i < self.indexPathArray.count;i++){
+                        tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.whiteColor()
+                    }
+                    fileMgr.editingMode = false
+                }
+                else{
+                    fileMgr.editingMode = false
+                    ////THIS WILL NEED TO BE UPDATED TO SHOW SOME ERROR MESSAGE OR DEAL
+                    ////WITH THE FACT THAT YOU CANT COPY A FOLDER/FILE INTO A FILE
+                }
+                
+                
+            }
+            dropAction.backgroundColor = UIColor.blueColor()
+            
+            var cancelAction = UITableViewRowAction(style: .Normal, title: "Cancel") { (action, indexPath) -> Void in
+                tableView.editing = false //slide menu goes away
+                for(var i = 0; i < self.indexPathArray.count;i++){
+                    tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.whiteColor()
+                }
+                fileMgr.editingMode = false
+            }
+            cancelAction.backgroundColor = UIColor.redColor()
+            
+            
+            return [dropAction,cancelAction]
+        }
+            
+        else{
+            var shareAction = UITableViewRowAction(style: .Normal, title: "Share") { (action, indexPath) -> Void in
+                tableView.editing = false //slide menu goes away
+            }
+            shareAction.backgroundColor = UIColor.grayColor()
+            
+            
+            
+            
+            
+            
+            
+            var moveAction = UITableViewRowAction(style: .Default, title: "Move") { (action, indexPath) -> Void in
+                tableView.editing = false //slide menu goes away
+                
+                fileMgr.editingPathToChange = fileMgr.pathStringArray[indexPath.row]
+                
+                
+                for(var i = 0; i < self.indexPathArray.count;i++){
+                    tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.greenColor()
+                }
+                fileMgr.editingMode = true
+            }
+            moveAction.backgroundColor = UIColor.greenColor()
+            
+            
+            
+            
+            
+            
+            var deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) -> Void in
+                tableView.editing = false //slide menu goes away
+                var deleteError:NSError?
+                var tempFileString = fileMgr.pathStringArray[indexPath.row]
+                fileMgr.pathStringArray.removeAtIndex(indexPath.row)
+                self.indexPathArray.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                fileMgr.nsFM.removeItemAtPath(tempFileString, error: &deleteError)
+            }
+            deleteAction.backgroundColor = UIColor.redColor()
+            
+            return [deleteAction, moveAction, shareAction]
+        }
+        
+        
+        
+    }
+    //Cell Editing: Piece #2
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
     
+    //Segue Controllers
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "selfSegue") {
             ///update all to new dir
@@ -99,9 +165,14 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
         if(segue.identifier == "homeButtonSegue"){
             fileMgr.setCurrentPathHome()
         }
-        if(segue.identifier == "toDetail"){
-            if let destination = segue.destinationViewController as? DetailViewController {
-                destination.filePath = temp_new_path_holder
+        if(segue.identifier == "segueToImgView"){
+            if let destination = segue.destinationViewController as? ImgViewVC {
+                destination.path = temp_new_path_holder
+            }
+        }
+        if(segue.identifier == "segueToWebView"){
+            if let destination = segue.destinationViewController as? WebViewVC {
+                destination.path = temp_new_path_holder
             }
         }
     }
