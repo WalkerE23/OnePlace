@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         cell.textLabel?.text = fileMgr.directoryArray[indexPath.row].name
-        cell.detailTextLabel?.text = fileMgr.directoryArray[indexPath.row].desc
+//        cell.detailTextLabel?.text = fileMgr.directoryArray[indexPath.row].desc
         return cell
     }
     
@@ -36,14 +36,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         index_path_holder = indexPath.row
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.performSegueWithIdentifier("cellToDetail", sender: self)
-        println(fileMgr.itemArray[indexPath.row].text)
+//        println(fileMgr.itemArray[indexPath.row].text)
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "cellToDetail") {
             if let destination = segue.destinationViewController as? DetailViewController {
-                destination.dataText = fileMgr.itemArray[index_path_holder].text
+//                destination.dataText = fileMgr.itemArray[index_path_holder].text
             }
         }
         else{
