@@ -21,7 +21,6 @@ import UIKit
 let DOCUMENTS_DIRECTORY = NSSearchPathDirectory.DocumentDirectory
 
 
-
 class FileManager: NSObject{
     
     
@@ -44,8 +43,35 @@ class FileManager: NSObject{
     }
     
     //////////////
+    ////////Path get/set
+    ///////////
+
+    func readFromShared(){
+        var defaults = share.sharedUserDefaults()
+        if(defaults.objectForKey(share.datakey()) != nil && defaults.objectForKey(share.namekey()) != nil){
+            println("has")
+            
+            var data = defaults.objectForKey(share.datakey()) as! NSData
+            var name = defaults.objectForKey(share.namekey()) as! String
+            
+            var tempString = getDocsDir().stringByAppendingPathComponent(name)
+            if(data.writeToFile(tempString, atomically: true)){
+                println("yes")
+            }
+            else{
+                println("no")
+            }
+        }
+        else{
+            println("empty")
+        }
+        defaults.removeObjectForKey(share.datakey())
+        defaults.removeObjectForKey(share.namekey())
+        
+    }
     
     func populatePathList(folderPath:String)->[String]{
+        readFromShared()
         var popDirListError:NSError?
         var fullPathArray = [String]()
         var temp = NSFileManager.defaultManager().contentsOfDirectoryAtPath(folderPath, error: &popDirListError) as! [String]
@@ -59,7 +85,6 @@ class FileManager: NSObject{
         let dirPaths = NSSearchPathForDirectoriesInDomains(DOCUMENTS_DIRECTORY,
             .UserDomainMask, true)
         let docsDir = dirPaths[0] as! String
-        println(docsDir)
         return docsDir
     }
     
@@ -68,6 +93,9 @@ class FileManager: NSObject{
         //fileStringArray = populateFileList()
     }
     
+    /////
+    ////Set Current Paths
+    /////
     func setCurrentPathBack(){
         if(currentPath == getDocsDir()){
             //check specifically for this, then do nothing
@@ -92,6 +120,8 @@ class FileManager: NSObject{
     func addDirectory(path:String){
         pathStringArray.append(path)
     }
+    /////////
+    ///////
     
     //Transfers folders and files from given path to new given path
     func moveOver(fromPath: String, toPath: String){
@@ -103,6 +133,26 @@ class FileManager: NSObject{
         else{
             println(moveError?.description)
         }
+    }
+    //////
+    
+    
+    
+    //////Get Files
+    func giveFileNameAndData(path:String)->(String,NSData){
+        var name = ""
+        var data:NSData
+        
+        var exists = fileMgr.nsFM.fileExistsAtPath(path)
+        if(exists){
+            data = NSData(contentsOfFile: path)!
+            name = path.lastPathComponent
+        }
+        else{
+            data = NSData()
+            name = "File not Found"
+        }
+        return(name,data)
     }
     
     

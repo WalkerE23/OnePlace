@@ -109,22 +109,21 @@ extension DBFile {
     }
 }
 
-class DropboxManager: UIViewController{
-    
+class DropboxManager: NSObject{
     
     //Dropbox app is called "One Place"
     let APP_KEY = "s3s4pn17rto9et2"
     let APP_SECRET = "y9cujkdd4rwzpyo"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     func setup() {
         let acctMgr = DBAccountManager(appKey: APP_KEY, secret: APP_SECRET)
         DBAccountManager.setSharedManager(acctMgr)
         var t = DBPath.root()
         println("ok")
+    }
+    
+    func logout(){
+        DBAccountManager.sharedManager().linkedAccount.unlink()
     }
     
     func initiateAuthentication(viewController: UIViewController) {
@@ -149,7 +148,11 @@ class DropboxManager: UIViewController{
     }
     
     func saveFile(filename: String, data: NSData) -> Result<()> {
+        println("::ROOT:: \(DBPath.root().description)")
+        println()
         let path = DBPath.root().childPath(filename)
+        println("::PATH:: \(path)")
+        var t = DBFilesystem.sharedFilesystem()
         return (DBFilesystem.sharedFilesystem().createFile(path, error: nil) >>- { $0.writeData(data) })!
     }
 }

@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0C35F31AF721DE004E772F /* DropboxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0C35F21AF721DD004E772F /* DropboxVC.swift */; };
+		FF0C36021AF83489004E772F /* Save_File.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FF0C35F81AF83489004E772F /* Save_File.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF0C361A1AF87A55004E772F /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0C36191AF87A55004E772F /* ActionViewController.swift */; };
+		FF0C361C1AF87A56004E772F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0C361B1AF87A56004E772F /* MainInterface.storyboard */; };
+		FF0C361F1AF87A56004E772F /* OnePlace.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FF0C36151AF87A55004E772F /* OnePlace.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF0C36241AF92CB5004E772F /* OnePlace.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = FF0C36231AF88C9F004E772F /* OnePlace.entitlements */; };
+		FF0C36251AF92CB6004E772F /* OnePlace.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = FF0C36231AF88C9F004E772F /* OnePlace.entitlements */; };
+		FF0C36271AF9307E004E772F /* SharedGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0C36261AF9307E004E772F /* SharedGroups.swift */; };
+		FF0C36281AF9307E004E772F /* SharedGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0C36261AF9307E004E772F /* SharedGroups.swift */; };
+		FF0C362A1AF93262004E772F /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0C36191AF87A55004E772F /* ActionViewController.swift */; };
 		FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12613C1AD3016100135C60 /* AppDelegate.swift */; };
-		FF12613F1AD3016100135C60 /* FileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12613E1AD3016100135C60 /* FileTableViewController.swift */; };
 		FF1261421AD3016100135C60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1261401AD3016100135C60 /* Main.storyboard */; };
 		FF1261441AD3016100135C60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1261431AD3016100135C60 /* Images.xcassets */; };
 		FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1261451AD3016100135C60 /* LaunchScreen.xib */; };
@@ -18,7 +27,6 @@
 		FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */; };
 		FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */; };
 		FF89A6021AF1B1F300E6C28A /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */; };
-		FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9928D91AD6FEF400352288 /* FileCreateVC.swift */; };
 		FFF07FEE1AF4588A00AFC979 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FED1AF4588A00AFC979 /* Dropbox.framework */; };
 		FFF07FF01AF459E000AFC979 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */; };
 		FFF07FF21AF459ED00AFC979 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF07FF11AF459ED00AFC979 /* Security.framework */; };
@@ -30,6 +38,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FF0C36001AF83489004E772F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF12612F1AD3016000135C60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF0C35F71AF83489004E772F;
+			remoteInfo = Save_File;
+		};
+		FF0C361D1AF87A56004E772F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF12612F1AD3016000135C60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF0C36141AF87A55004E772F;
+			remoteInfo = OnePlace;
+		};
 		FF12614D1AD3016100135C60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF12612F1AD3016000135C60 /* Project object */;
@@ -39,11 +61,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FF0C36061AF8348A004E772F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FF0C36021AF83489004E772F /* Save_File.appex in Embed App Extensions */,
+				FF0C361F1AF87A56004E772F /* OnePlace.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FF0C35F21AF721DD004E772F /* DropboxVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxVC.swift; sourceTree = "<group>"; };
+		FF0C35F81AF83489004E772F /* Save_File.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Save_File.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0C36151AF87A55004E772F /* OnePlace.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OnePlace.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0C36181AF87A55004E772F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF0C36191AF87A55004E772F /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		FF0C361B1AF87A56004E772F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		FF0C36231AF88C9F004E772F /* OnePlace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OnePlace.entitlements; sourceTree = "<group>"; };
+		FF0C36261AF9307E004E772F /* SharedGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedGroups.swift; sourceTree = "<group>"; };
+		FF0C362B1AF94385004E772F /* File_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = File_Manager.entitlements; sourceTree = "<group>"; };
 		FF1261371AD3016000135C60 /* File_Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = File_Manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF12613B1AD3016100135C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF12613C1AD3016100135C60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF12613E1AD3016100135C60 /* FileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileTableViewController.swift; path = File_Manager/FileTableViewController.swift; sourceTree = "<group>"; };
 		FF1261411AD3016100135C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1261431AD3016100135C60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF1261461AD3016100135C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,7 +100,6 @@
 		FF4879A11ADD9C1500BE7EF6 /* FolderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
 		FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCreateVC.swift; sourceTree = "<group>"; };
 		FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
-		FF9928D91AD6FEF400352288 /* FileCreateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileCreateVC.swift; path = File_Manager/FileCreateVC.swift; sourceTree = "<group>"; };
 		FFF07FED1AF4588A00AFC979 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dropbox.framework; path = File_Manager/Dropbox.framework; sourceTree = "<group>"; };
 		FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFF07FF11AF459ED00AFC979 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -63,11 +107,24 @@
 		FFF07FF51AF45A0000AFC979 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FFF07FF71AF45A2900AFC979 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		FFF07FF91AF45A3A00AFC979 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		FFF07FFB1AF45D0100AFC979 /* File_Manager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "File_Manager-Bridging-Header.h"; sourceTree = "<group>"; };
 		FFF07FFE1AF46FDC00AFC979 /* DropboxManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropboxManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF0C35F51AF83489004E772F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0C36121AF87A55004E772F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF1261341AD3016000135C60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,9 +149,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0C36161AF87A55004E772F /* OnePlace */ = {
+			isa = PBXGroup;
+			children = (
+				FF0C36231AF88C9F004E772F /* OnePlace.entitlements */,
+				FF0C36191AF87A55004E772F /* ActionViewController.swift */,
+				FF0C361B1AF87A56004E772F /* MainInterface.storyboard */,
+				FF0C36171AF87A55004E772F /* Supporting Files */,
+			);
+			path = OnePlace;
+			sourceTree = "<group>";
+		};
+		FF0C36171AF87A55004E772F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF0C36181AF87A55004E772F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FF12612E1AD3016000135C60 = {
 			isa = PBXGroup;
 			children = (
+				FF0C36261AF9307E004E772F /* SharedGroups.swift */,
 				FFF07FF91AF45A3A00AFC979 /* libz.dylib */,
 				FFF07FF71AF45A2900AFC979 /* libc++.dylib */,
 				FFF07FED1AF4588A00AFC979 /* Dropbox.framework */,
@@ -104,10 +181,8 @@
 				FFF07FEF1AF459E000AFC979 /* CFNetwork.framework */,
 				FF1261391AD3016000135C60 /* File_Manager */,
 				FF12614F1AD3016100135C60 /* File_ManagerTests */,
+				FF0C36161AF87A55004E772F /* OnePlace */,
 				FF1261381AD3016000135C60 /* Products */,
-				FF9928D91AD6FEF400352288 /* FileCreateVC.swift */,
-				FF12613E1AD3016100135C60 /* FileTableViewController.swift */,
-				FFF07FFB1AF45D0100AFC979 /* File_Manager-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +191,8 @@
 			children = (
 				FF1261371AD3016000135C60 /* File_Manager.app */,
 				FF12614C1AD3016100135C60 /* File_ManagerTests.xctest */,
+				FF0C35F81AF83489004E772F /* Save_File.appex */,
+				FF0C36151AF87A55004E772F /* OnePlace.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +200,7 @@
 		FF1261391AD3016000135C60 /* File_Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FF0C362B1AF94385004E772F /* File_Manager.entitlements */,
 				FF1261401AD3016100135C60 /* Main.storyboard */,
 				FF12615C1AD30C0600135C60 /* FileManager.swift */,
 				FFF07FFE1AF46FDC00AFC979 /* DropboxManager.swift */,
@@ -131,6 +209,7 @@
 				FF4879A31ADDA9A500BE7EF6 /* FolderCreateVC.swift */,
 				FF2D27121AE888D900B358A1 /* ImgViewVC.swift */,
 				FF89A6011AF1B1F300E6C28A /* WebViewVC.swift */,
+				FF0C35F21AF721DD004E772F /* DropboxVC.swift */,
 				FF1261431AD3016100135C60 /* Images.xcassets */,
 				FF1261451AD3016100135C60 /* LaunchScreen.xib */,
 				FF12613A1AD3016100135C60 /* Supporting Files */,
@@ -166,6 +245,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF0C35F71AF83489004E772F /* Save_File */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0C36031AF8348A004E772F /* Build configuration list for PBXNativeTarget "Save_File" */;
+			buildPhases = (
+				FF0C35F41AF83489004E772F /* Sources */,
+				FF0C35F51AF83489004E772F /* Frameworks */,
+				FF0C35F61AF83489004E772F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Save_File;
+			productName = Save_File;
+			productReference = FF0C35F81AF83489004E772F /* Save_File.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FF0C36141AF87A55004E772F /* OnePlace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0C36201AF87A56004E772F /* Build configuration list for PBXNativeTarget "OnePlace" */;
+			buildPhases = (
+				FF0C36111AF87A55004E772F /* Sources */,
+				FF0C36121AF87A55004E772F /* Frameworks */,
+				FF0C36131AF87A55004E772F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnePlace;
+			productName = OnePlace;
+			productReference = FF0C36151AF87A55004E772F /* OnePlace.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FF1261361AD3016000135C60 /* File_Manager */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1261561AD3016100135C60 /* Build configuration list for PBXNativeTarget "File_Manager" */;
@@ -173,10 +286,13 @@
 				FF1261331AD3016000135C60 /* Sources */,
 				FF1261341AD3016000135C60 /* Frameworks */,
 				FF1261351AD3016000135C60 /* Resources */,
+				FF0C36061AF8348A004E772F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FF0C36011AF83489004E772F /* PBXTargetDependency */,
+				FF0C361E1AF87A56004E772F /* PBXTargetDependency */,
 			);
 			name = File_Manager;
 			productName = File_Manager;
@@ -210,8 +326,32 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Elliott Walker";
 				TargetAttributes = {
+					FF0C35F71AF83489004E772F = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7RY8Q2527H;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					FF0C36141AF87A55004E772F = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7RY8Q2527H;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					FF1261361AD3016000135C60 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7RY8Q2527H;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FF12614B1AD3016100135C60 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -234,17 +374,36 @@
 			targets = (
 				FF1261361AD3016000135C60 /* File_Manager */,
 				FF12614B1AD3016100135C60 /* File_ManagerTests */,
+				FF0C35F71AF83489004E772F /* Save_File */,
+				FF0C36141AF87A55004E772F /* OnePlace */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF0C35F61AF83489004E772F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0C36131AF87A55004E772F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0C36251AF92CB6004E772F /* OnePlace.entitlements in Resources */,
+				FF0C361C1AF87A56004E772F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF1261351AD3016000135C60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF1261421AD3016100135C60 /* Main.storyboard in Resources */,
 				FF1261471AD3016100135C60 /* LaunchScreen.xib in Resources */,
+				FF0C36241AF92CB5004E772F /* OnePlace.entitlements in Resources */,
 				FF1261441AD3016100135C60 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,19 +418,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF0C35F41AF83489004E772F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0C36111AF87A55004E772F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0C36281AF9307E004E772F /* SharedGroups.swift in Sources */,
+				FF0C361A1AF87A55004E772F /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF1261331AD3016000135C60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF12613F1AD3016100135C60 /* FileTableViewController.swift in Sources */,
 				FF4879A41ADDA9A500BE7EF6 /* FolderCreateVC.swift in Sources */,
+				FF0C36271AF9307E004E772F /* SharedGroups.swift in Sources */,
 				FF4879A21ADD9C1500BE7EF6 /* FolderTableViewController.swift in Sources */,
 				FF12615D1AD30C0600135C60 /* FileManager.swift in Sources */,
 				FFF07FFF1AF46FDC00AFC979 /* DropboxManager.swift in Sources */,
 				FF2D27131AE888D900B358A1 /* ImgViewVC.swift in Sources */,
+				FF0C362A1AF93262004E772F /* ActionViewController.swift in Sources */,
 				FF89A6021AF1B1F300E6C28A /* WebViewVC.swift in Sources */,
+				FF0C35F31AF721DE004E772F /* DropboxVC.swift in Sources */,
 				FF12613D1AD3016100135C60 /* AppDelegate.swift in Sources */,
-				FF9928DA1AD6FEF400352288 /* FileCreateVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +462,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FF0C36011AF83489004E772F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF0C35F71AF83489004E772F /* Save_File */;
+			targetProxy = FF0C36001AF83489004E772F /* PBXContainerItemProxy */;
+		};
+		FF0C361E1AF87A56004E772F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF0C36141AF87A55004E772F /* OnePlace */;
+			targetProxy = FF0C361D1AF87A56004E772F /* PBXContainerItemProxy */;
+		};
 		FF12614E1AD3016100135C60 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF1261361AD3016000135C60 /* File_Manager */;
@@ -313,6 +499,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FF0C36041AF8348A004E772F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Save_File/Save_File.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Save_File/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		FF0C36051AF8348A004E772F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Save_File/Save_File.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Save_File/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+		FF0C36211AF87A56004E772F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OnePlace/OnePlace.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OnePlace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		FF0C36221AF87A56004E772F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OnePlace/OnePlace.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = OnePlace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
 		FF1261541AD3016100135C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -335,6 +601,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -377,6 +644,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -395,6 +663,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = File_Manager/File_Manager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/File_Manager",
@@ -402,6 +673,7 @@
 				INFOPLIST_FILE = File_Manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "File_Manager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -412,6 +684,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = File_Manager/File_Manager.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/File_Manager",
@@ -419,6 +694,7 @@
 				INFOPLIST_FILE = File_Manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "File_Manager-Bridging-Header.h";
 			};
 			name = Release;
@@ -460,6 +736,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF0C36031AF8348A004E772F /* Build configuration list for PBXNativeTarget "Save_File" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0C36041AF8348A004E772F /* Debug */,
+				FF0C36051AF8348A004E772F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FF0C36201AF87A56004E772F /* Build configuration list for PBXNativeTarget "OnePlace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0C36211AF87A56004E772F /* Debug */,
+				FF0C36221AF87A56004E772F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FF1261321AD3016000135C60 /* Build configuration list for PBXProject "File_Manager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

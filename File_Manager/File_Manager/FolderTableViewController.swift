@@ -6,6 +6,20 @@ import UIKit
 class FolderTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerLabel: UILabel!
+    
+    @IBOutlet weak var placeHomeButton: UIButton!
+    
+    @IBAction func placeHomeButtonHit(sender: AnyObject) {
+        if(fileMgr.editingMode){
+            fileMgr.moveOver(fileMgr.editingPathToChange,toPath:fileMgr.getDocsDir())
+            fileMgr.editingMode = false
+            for(var i = 0; i < self.indexPathArray.count;i++){
+                tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.whiteColor()
+            }
+        }
+        //else nothing
+    }
     
     var temp_new_path_holder:String!
     var indexPathArray = [NSIndexPath]()
@@ -20,6 +34,15 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerLabel.text = stripPath(fileMgr.currentPath)
+        if(fileMgr.editingMode){
+            placeHomeButton.hidden = false
+            placeHomeButton.enabled = true
+        }
+        else{
+            placeHomeButton.hidden = true
+            placeHomeButton.enabled = false
+        }
     }
     
     //Get Number of cells to create
@@ -30,10 +53,14 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
     //create cells and put them in the table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "folderCell")
+        var tempString = fileMgr.pathStringArray[indexPath.row]
         cell.textLabel?.text = stripPath(fileMgr.pathStringArray[indexPath.row])
         indexPathArray.append(indexPath)
         
-        if(fileMgr.editingMode){cell.backgroundColor = UIColor.greenColor()}
+        var isDir = fileMgr.checkFolderOrFile(tempString)
+        if(isDir){
+            if(fileMgr.editingMode){cell.backgroundColor = UIColor.greenColor()}
+        }
         else{cell.backgroundColor = UIColor.whiteColor()}
         
         return cell
@@ -51,14 +78,16 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
             //fileMgr.editingMode = false
         }
         else{
-            if(temp_new_path_holder.pathExtension == "jpg"){
+            if(temp_new_path_holder.pathExtension == "jpg" || temp_new_path_holder.pathExtension == "JPG"
+                || temp_new_path_holder.pathExtension == "png" || temp_new_path_holder.pathExtension == "PNG"){
                 self.performSegueWithIdentifier("segueToImgView", sender: self)
             }
-            else if(temp_new_path_holder.pathExtension == "pdf" || temp_new_path_holder.pathExtension == "txt"){
+            else if(temp_new_path_holder.pathExtension == "pdf" || temp_new_path_holder.pathExtension == "txt"
+                || temp_new_path_holder.pathExtension == "TXT" || temp_new_path_holder.pathExtension == "PDF"){
                 self.performSegueWithIdentifier("segueToWebView", sender: self)
             }
             else{
-                println("huh????")
+                println("not a valid file name")
             }
         }
 
@@ -81,13 +110,13 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 else{
                     fileMgr.editingMode = false
-                    ////THIS WILL NEED TO BE UPDATED TO SHOW SOME ERROR MESSAGE OR DEAL
-                    ////WITH THE FACT THAT YOU CANT COPY A FOLDER/FILE INTO A FILE
                 }
                 
-                
+                //self.performSegueWithIdentifier("selfSegue", sender: self)
             }
             dropAction.backgroundColor = UIColor.blueColor()
+            
+            
             
             var cancelAction = UITableViewRowAction(style: .Normal, title: "Cancel") { (action, indexPath) -> Void in
                 tableView.editing = false //slide menu goes away
@@ -105,12 +134,21 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
         else{
             var shareAction = UITableViewRowAction(style: .Normal, title: "Share") { (action, indexPath) -> Void in
                 tableView.editing = false //slide menu goes away
+                
+                var tempPath = fileMgr.pathStringArray[indexPath.row]
+                
+                var isDir = fileMgr.checkFolderOrFile(tempPath)
+                if(isDir){
+                    //do something if dir
+                }
+                else{
+                    var tObj = fileMgr.giveFileNameAndData(tempPath)
+                    var name = tObj.0
+                    var data = tObj.1
+                    dropboxMgr.saveFile(name, data: data)
+                }
             }
             shareAction.backgroundColor = UIColor.grayColor()
-            
-            
-            
-            
             
             
             
@@ -121,15 +159,17 @@ class FolderTableViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 
                 for(var i = 0; i < self.indexPathArray.count;i++){
-                    tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.greenColor()
+                    var tempPath = fileMgr.pathStringArray[i]
+                    var isDir = fileMgr.checkFolderOrFile(tempPath)
+                    if(isDir){
+                        tableView.cellForRowAtIndexPath(self.indexPathArray[i])?.backgroundColor = UIColor.greenColor()
+                    }
                 }
+                self.placeHomeButton.enabled = true
+                self.placeHomeButton.hidden = false
                 fileMgr.editingMode = true
             }
             moveAction.backgroundColor = UIColor.greenColor()
-            
-            
-            
-            
             
             
             var deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) -> Void in
